@@ -2,21 +2,21 @@
   "name": "project-dashboard-rcl",
   "version": "0.1.0",
   "description": "Project dashborad component library",
-	"email": "autographa.support@bridgeconn.com",
-	"author": "Friends of Agape <autographa.support@bridgeconn.com>",
+  "email": "autographa.support@bridgeconn.com",
+  "author": "Friends of Agape <autographa.support@bridgeconn.com>",
   "private": true,
   "license": "MIT",
   "main": "lib/index.js",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/friendsofagape/autographa"
-	},
+    "type": "git",
+    "url": "https://github.com/friendsofagape/autographa"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "startnext": "next start",
     "lint": "next lint",
-    "styleguidist": "styleguidist server",
+    "start": "styleguidist server",
     "styleguidist:build": "styleguidist build"
   },
   "dependencies": {
@@ -25,9 +25,11 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.2.5",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
-    "react-styleguidist": "^11.1.1",
-    "webpack": "4.44.0"
+    "react-styleguidist": "^13.0.0"
   }
 }
