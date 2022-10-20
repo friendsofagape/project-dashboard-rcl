@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Cleaned Up</div>;
+  return <div>Run Styleguidist</div>;
 }
