@@ -4,6 +4,16 @@ module.exports = {
   components: "src/components/**/[A-Z]*.{js,jsx,tsx}",
   require: [path.join(__dirname, "./dist/styles.css")],
   // require: [path.join(__dirname, "./styles/globals.css")],
+  title: "Project Dashboard Components",
+  // styles: {
+  //   StyleGuide: {
+  //     sidebar: {
+  //       backgroundColor: "#03a5fc",
+  //       width: "200px",
+  //     },
+  //   },
+  // },
+
   webpackConfig: {
     module: {
       rules: [
