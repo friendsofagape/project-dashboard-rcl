@@ -24,7 +24,7 @@ Label.defaultProps = {
   children: "Label Text",
   bgColor: "bg-transparent",
   color: "text-blue-700",
-  extraClass: "font-sans hover:font-serif",
+  extraClass: "",
 };
 
 export default Label;
