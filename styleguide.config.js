@@ -1,19 +1,18 @@
 const path = require("path");
+const { name, version, repository } = require("./package.json");
+const { styles, theme } = require("./styleguide.styles");
 
 module.exports = {
   components: "src/components/**/[A-Z]*.{js,jsx,tsx}",
+  title: `${name} v${version}`,
+  ribbon: {
+    url: repository.url,
+    text: "View on GitHub",
+  },
+  styles,
+  theme,
+  version,
   require: [path.join(__dirname, "./dist/styles.css")],
-  // require: [path.join(__dirname, "./styles/globals.css")],
-  title: "Project Dashboard Components",
-  // styles: {
-  //   StyleGuide: {
-  //     sidebar: {
-  //       backgroundColor: "#03a5fc",
-  //       width: "200px",
-  //     },
-  //   },
-  // },
-
   webpackConfig: {
     module: {
       rules: [

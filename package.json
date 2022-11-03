@@ -17,12 +17,18 @@
     "startnext": "next start",
     "lint": "next lint",
     "start": "styleguidist server",
-    "styleguidist:build": "styleguidist build"
+    "styleguidist:build": "styleguidist build",
+    "build:tailwind": "npx tailwindcss -i styles/tailwind.css -o dist/styles.css --watch"
   },
   "dependencies": {
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
     "next": "12.3.1",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
