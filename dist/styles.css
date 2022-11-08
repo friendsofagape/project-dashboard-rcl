@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -44,6 +45,8 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -515,84 +518,12 @@ video {
   margin-right: 0.5rem;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
-}
-
-.h-20 {
-  height: 5rem;
-}
-
-.h-10 {
-  height: 2.5rem;
-}
-
-.h-\[calc\(\$\{radius\}\+4px\)\] {
-  height: calc(${radius}+4px);
-}
-
-.h-24 {
-  height: 6rem;
-}
-
-.h-\[calc\(\$\{radius\}\+px\)\] {
-  height: calc(${radius}+px);
-}
-
-.h-\[calc\(\$\{radius\}\)\] {
-  height: calc(${radius});
-}
-
-.h-14 {
-  height: 3.5rem;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
-.h-\[52px\] {
-  height: 52px;
-}
-
-.h-\[56px\] {
-  height: 56px;
-}
-
-.w-20 {
-  width: 5rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-24 {
-  width: 6rem;
-}
-
-.w-\[calc\(\$\{radius\}\+4px\)\] {
-  width: calc(${radius}+4px);
-}
-
-.w-\[calc\(\$\{radius\}\)\] {
-  width: calc(${radius});
-}
-
-.w-14 {
-  width: 3.5rem;
-}
-
-.w-16 {
-  width: 4rem;
-}
-
-.w-\[52px\] {
-  width: 52px;
-}
-
-.w-\[56px\] {
-  width: 56px;
 }
 
 .flex-1 {
@@ -619,16 +550,8 @@ video {
   align-items: center;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .gap-3 {
@@ -639,12 +562,28 @@ video {
   gap: 1.25rem;
 }
 
-.rounded {
-  border-radius: 0.25rem;
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .rounded-tl-md {
@@ -663,10 +602,6 @@ video {
   border-width: 2px;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
 .border-blue-500 {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
@@ -682,28 +617,91 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-blue-400 {
+.border-\[\#aaff80\] {
   --tw-border-opacity: 1;
-  border-color: rgb(96 165 250 / var(--tw-border-opacity));
+  border-color: rgb(170 255 128 / var(--tw-border-opacity));
 }
 
-.border-blue-200 {
-  --tw-border-opacity: 1;
-  border-color: rgb(191 219 254 / var(--tw-border-opacity));
+.border-\[\"\#80bfff\"\] {
+  border-color: "#80bfff";
 }
 
-.border-orange-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(251 146 60 / var(--tw-border-opacity));
+.border-\[\] {
+  border-color: ;
 }
 
-.bg-transparent {
-  background-color: transparent;
+.border-\[\#80bfff\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(128 191 255 / var(--tw-border-opacity));
+}
+
+.border-\[\#ffb3b3\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 179 179 / var(--tw-border-opacity));
+}
+
+.border-\[\#f1f1f1\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(241 241 241 / var(--tw-border-opacity));
+}
+
+.border-\[\#ffcccc\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 204 204 / var(--tw-border-opacity));
+}
+
+.border-\[\#ffb9b9\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 185 185 / var(--tw-border-opacity));
+}
+
+.border-\[\#91630f\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(145 99 15 / var(--tw-border-opacity));
+}
+
+.border-\[\#b7ff93\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(183 255 147 / var(--tw-border-opacity));
 }
 
 .bg-\[\#0073e5\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 115 229 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#6c757d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(108 117 125 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#40c000\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(64 192 0 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ff4d4d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 77 77 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#0d6efd\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 110 253 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#0dcaf0\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 202 240 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#f9f9f9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 249 249 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-\[\#1981e8\] {
@@ -721,14 +719,87 @@ video {
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
 
-.bg-blue-700 {
+.bg-\[\#ffc107\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+  background-color: rgb(255 193 7 / var(--tw-bg-opacity));
 }
 
-.bg-orange-500 {
+.bg-\[\#255e07\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+  background-color: rgb(37 94 7 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ddffcc\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 255 204 / var(--tw-bg-opacity));
+}
+
+.bg-\[\"\#cce6ff\"\] {
+  background-color: "#cce6ff";
+}
+
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[\#80bfff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(128 191 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#cce6ff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 230 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#98cbff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(152 203 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#a6d2ff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(166 210 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ffcccc\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 204 204 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ffb3b3\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 179 179 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#eeeeee\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e3e3e3\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(227 227 227 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e4f2ff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 242 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#ffb9b9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 185 185 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#c2830f\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(194 131 15 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e9a425\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 164 37 / var(--tw-bg-opacity));
 }
 
 .fill-white {
@@ -737,6 +808,16 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .py-2 {
@@ -749,8 +830,24 @@ video {
   padding-right: 1rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.align-baseline {
+  vertical-align: baseline;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .text-xs {
@@ -758,8 +855,34 @@ video {
   line-height: 1rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
 .font-semibold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.leading-4 {
+  line-height: 1rem;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-blue-700 {
@@ -772,18 +895,19 @@ video {
   color: rgb(248 113 113 / var(--tw-text-opacity));
 }
 
-.text-white {
+.text-\[\#1f84e7\] {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(31 132 231 / var(--tw-text-opacity));
 }
 
-.brightness-50 {
-  --tw-brightness: brightness(.5);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.text-\[\#ddffcc\] {
+  --tw-text-opacity: 1;
+  color: rgb(221 255 204 / var(--tw-text-opacity));
 }
 
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .hover\:border-transparent:hover {
