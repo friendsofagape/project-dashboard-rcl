@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { PieChart, Pie, ResponsiveContainer, Tooltip } from "recharts";
+import { PieChart, Pie, ResponsiveContainer, Tooltip, Label } from "recharts";
 
-const SemiDonutChart = ({ data, labelEnable, animationEnable }) => {
+const SemiDonutChart = ({ data, labelEnable, animationEnable, donutText }) => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (labelEnable && active && payload && payload.length) {
       return (
@@ -30,7 +30,13 @@ const SemiDonutChart = ({ data, labelEnable, animationEnable }) => {
             startAngle={180}
             endAngle={0}
             isAnimationActive={animationEnable}
-          />
+          >
+            <Label
+              className="text-md font-bold"
+              value={donutText}
+              position="center"
+            />
+          </Pie>
           <Tooltip content={<CustomTooltip />} />
         </PieChart>
       </ResponsiveContainer>
@@ -43,7 +49,7 @@ SemiDonutChart.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
       color: PropTypes.string.isRequired,
     })
   ).isRequired,
@@ -51,6 +57,8 @@ SemiDonutChart.propTypes = {
   labelEnable: PropTypes.bool,
   /** enable/disable animation*/
   animationEnable: PropTypes.bool,
+  /** text for donut */
+  donutText: PropTypes.string,
 };
 
 SemiDonutChart.defaultProps = {
@@ -61,6 +69,7 @@ SemiDonutChart.defaultProps = {
   ],
   labelEnable: true,
   animationEnable: true,
+  donutText: "",
 };
 
 export default SemiDonutChart;

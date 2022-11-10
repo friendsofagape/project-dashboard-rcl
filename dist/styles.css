@@ -523,6 +523,10 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -541,6 +545,15 @@ video {
 
 .h-40 {
   height: 10rem;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .w-12 {
@@ -569,6 +582,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -605,6 +622,22 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-32 {
+  gap: 8rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .whitespace-nowrap {
