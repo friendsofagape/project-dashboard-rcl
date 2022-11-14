@@ -1,1 +1,1 @@
-// export { default } from "./SemiDonutChart";
+export { default } from "./SemiDonutChart";
