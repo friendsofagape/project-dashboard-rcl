@@ -11,18 +11,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const MultiLineChart = ({ data, labelEnable }) => {
-  // const CustomTooltip = ({ active, payload, label }) => {
-  //   if (labelEnable && active && payload && payload.length) {
-  //     return (
-  //       <div className={`bg-[${payload[0]?.payload?.fill}] p-1 rounded-md`}>
-  //         <p className="text-xs ">{`${payload[0]?.name} : ${payload[0]?.value}`}</p>
-  //       </div>
-  //     );
-  //   }
-  //   return null;
-  // };
-
+const MultiLineChart = ({ data }) => {
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
@@ -42,7 +31,7 @@ const MultiLineChart = ({ data, labelEnable }) => {
             );
           })}
 
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid strokeDasharray="3 3" horizontal={false} />
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
@@ -54,20 +43,22 @@ const MultiLineChart = ({ data, labelEnable }) => {
 };
 
 MultiLineChart.propTypes = {
-  /** Chart Data, color - pass 1 or more set of data and color (max 5)*/
-  // data: PropTypes.shape({
-  //   graphData: propTypes.arrayOf({
-  //     name: propTypes.string.isRequired,
-  //     data1: propTypes.string.isRequired,
-  //   }),
-  //   colors: propTypes.arrayOf(propTypes.string.isRequired),
-  // }),
+  /** Chart Data, colors, datakeys - pass 1 or more set of data, color, dataKeys
+   * datakeys should be same as data given in the graphData
+   */
+  data: PropTypes.objectOf(
+    PropTypes.shape({
+      graphData: PropTypes.arrayOf(PropTypes.object).isRequired,
+      colors: PropTypes.arrayOf(PropTypes.string).isRequired,
+      dataKeyNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+  ).isRequired,
   /** enable label of section on hover*/
-  labelEnable: PropTypes.bool,
+  // labelEnable: PropTypes.bool,
 };
 
 MultiLineChart.defaultProps = {
-  labelEnable: true,
+  // labelEnable: true,
 };
 
 export default MultiLineChart;
