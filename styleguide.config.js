@@ -9,7 +9,7 @@ let sections = [
   },
   {
     name: "Components",
-    content: "src/components/_readme.md",
+    content: "src/components/components/_readme.md",
     components: () => {
       const componentNames = [
         "Badge",
@@ -25,7 +25,7 @@ let sections = [
       return componentNames.map((componentName) => {
         return path.resolve(
           __dirname,
-          `src/components/${componentName}`,
+          `src/components/components/${componentName}`,
           `${componentName}.js`
         );
       });
@@ -33,13 +33,13 @@ let sections = [
   },
   {
     name: "DashBoards Examples",
-    content: "src/ExampleDashboards/_readme.md",
+    content: "src/components/ExampleDashboards/_readme.md",
     components: () => {
-      const componentNames = ["ExampleDashboardAg"];
+      const componentNames = ["OverViewCard"];
       return componentNames.map((componentName) => {
         return path.resolve(
           __dirname,
-          `src/ExampleDashboards/${componentName}`,
+          `src/components/ExampleDashboards/${componentName}`,
           `${componentName}.js`
         );
       });

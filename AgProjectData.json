@@ -1,0 +1,8 @@
+{
+    "tit" : {
+        "total" : 100,
+        "validated": 50,
+        "inprogress": 30,
+        "pending": 20
+    }
+}

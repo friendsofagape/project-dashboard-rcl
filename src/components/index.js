@@ -1,9 +1,2 @@
-export { default as Button } from "./Button";
-export { default as Label } from "./Label";
-export { default as HeadBar } from "./HeadBar";
-export { default as SemiDonutChart } from "./SemiDonutChart";
-export { default as PieProgress } from "./PieProgress";
-export { default as Badge } from "./Badge";
-export { default as CardLayout } from "./CardLayout";
-export { default as MultiLineChart } from "./MultiLineChart";
-export { default as StackedBarChart } from "./StackedBarChart";
+export * from "./components";
+export * from "./ExampleDashboards";
