@@ -6,3 +6,4 @@ export { default as PieProgress } from "./PieProgress";
 export { default as Badge } from "./Badge";
 export { default as CardLayout } from "./CardLayout";
 export { default as MultiLineChart } from "./MultiLineChart";
+export { default as StackedBarChart } from "./StackedBarChart";

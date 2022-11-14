@@ -31,9 +31,13 @@ const MultiLineChart = ({ data }) => {
             );
           })}
 
-          <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-          <XAxis dataKey="name" />
-          <YAxis />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            horizontal={false}
+            stroke="#e3e3e3"
+          />
+          <XAxis dataKey="name" stroke="#8c96a0" />
+          <YAxis stroke="#8c96a0" />
           <Tooltip />
           {/* <Legend /> */}
         </LineChart>

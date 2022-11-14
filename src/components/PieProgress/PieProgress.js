@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 const PieProgress = ({ filled, bgColor, radius, borderColor }) => {
   const calculateTurns = (filled) => {
-    console.log({ filled });
     if (filled > 100) return 1;
     else if (filled < 0) return 0;
     else return filled / 100;
