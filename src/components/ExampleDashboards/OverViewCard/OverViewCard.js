@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes, { element } from "prop-types";
+import PropTypes from "prop-types";
 import HeadBar from "../../components/HeadBar";
 import Label from "../../components/Label";
 import SemiDonutChart from "../../components/SemiDonutChart";
