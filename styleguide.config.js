@@ -35,7 +35,7 @@ let sections = [
     name: "DashBoards Examples",
     content: "src/components/ExampleDashboards/_readme.md",
     components: () => {
-      const componentNames = ["OverViewCard", "VersificationBarCard"];
+      const componentNames = ["OverViewCard", "VerificationBarCard"];
       return componentNames.map((componentName) => {
         return path.resolve(
           __dirname,

@@ -5,7 +5,7 @@ import CardLayout from "../../components/CardLayout";
 import Label from "../../components/Label";
 import StackedBarChart from "../../components/StackedBarChart";
 
-const VersificationBarCard = ({
+const VerificationBarCard = ({
   json,
   Head,
   subHead,
@@ -58,7 +58,7 @@ const VersificationBarCard = ({
   );
 };
 
-VersificationBarCard.propTypes = {
+VerificationBarCard.propTypes = {
   /** Json file */
   json: PropTypes.string.isRequired,
   /** Heading */
@@ -76,6 +76,6 @@ VersificationBarCard.propTypes = {
   }),
 };
 
-VersificationBarCard.defaultProps = {};
+VerificationBarCard.defaultProps = {};
 
-export default VersificationBarCard;
+export default VerificationBarCard;

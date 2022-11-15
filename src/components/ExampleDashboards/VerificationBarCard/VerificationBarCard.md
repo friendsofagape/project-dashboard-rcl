@@ -1,13 +1,13 @@
 # Ag Project Managament DashBoard
 
-versification chart
+VerificationBarCard chart
 
 ```jsx
-import VersificationBarCard from "./VersificationBarCard";
+import VerificationBarCard from "./VerificationBarCard";
 import json from "../../../../AgProjectData.json";
 
 <div className="bg-[#f9f9f9]">
-  <VersificationBarCard
+  <VerificationBarCard
     Head={"Verifications"}
     subHead={"by the month"}
     currentBook={{ name: "Titus", jsonCode: "tit" }}
