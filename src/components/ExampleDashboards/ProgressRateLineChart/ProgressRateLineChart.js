@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 // import useDateData from "../../hooks/useDateData";
 import CardLayout from "../../components/CardLayout";
 import Label from "../../components/Label";
-import StackedBarChart from "../../components/StackedBarChart";
+import MultiLineChart from "../../components/MultiLineChart";
 
-const VerificationBarCard = ({
+const ProgressRateLineChart = ({
   json,
   Head,
   subHead,
@@ -17,12 +17,13 @@ const VerificationBarCard = ({
   // const [day, month, year] = useDateData();
   // generate graph data for chart from json
   const graphdata = [];
-
   Object.entries(json[currentBook.jsonCode]["months"]).forEach(([key, val]) => {
     const monthobj = { name: key };
+    let sum = 0;
     graphdataKeys.forEach((graphkey) => {
-      monthobj[graphkey] = val[graphkey];
+      sum += val[graphkey];
     });
+    monthobj["rate"] = sum === 0 ? 0 : sum / val["TotalHours"];
     graphdata.push(monthobj);
   });
 
@@ -49,8 +50,12 @@ const VerificationBarCard = ({
           height="h-[15rem]"
           extraClass="my-2 mr-2"
         >
-          <StackedBarChart
-            data={{ graphData: graphdata, colors: graphColors }}
+          <MultiLineChart
+            data={{
+              graphData: graphdata,
+              colors: graphColors,
+              dataKeyNames: ["rate"],
+            }}
           />
         </CardLayout>
       </CardLayout>
@@ -58,7 +63,7 @@ const VerificationBarCard = ({
   );
 };
 
-VerificationBarCard.propTypes = {
+ProgressRateLineChart.propTypes = {
   /** Json file */
   json: PropTypes.string.isRequired,
   /** Heading */
@@ -76,6 +81,6 @@ VerificationBarCard.propTypes = {
   }),
 };
 
-VerificationBarCard.defaultProps = {};
+ProgressRateLineChart.defaultProps = {};
 
-export default VerificationBarCard;
+export default ProgressRateLineChart;

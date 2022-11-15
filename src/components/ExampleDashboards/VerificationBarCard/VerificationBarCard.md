@@ -1,5 +1,3 @@
-# Ag Project Managament DashBoard
-
 VerificationBarCard chart
 
 ```jsx

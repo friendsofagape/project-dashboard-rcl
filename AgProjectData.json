@@ -1,12 +1,13 @@
 {
     "tit" : {
         "versificationData":[],
+        "months":{
         "jan": {
             "validated": 20,
             "inprogress": 20,
             "pending": 20,
 
-            "TotalHours": 80,
+            "TotalHours": 8,
             "rate of transaltion":"calculate from total hourse spend , finished work verse/hour per month",
             "estimated date ":"calculate from rate of transltion of last 3 months",
             "spellchek":"data from Ag spell checker",
@@ -19,57 +20,69 @@
         "feb": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "mar": {
             "validated": 40,
             "inprogress": 40,
-            "pending": 10
+            "pending": 10,
+            "TotalHours": 10
         },
         "apr": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "may": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "Jun": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "Jul": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "aug": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "sep": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "oct": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "nov": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         },
         "dec": {
             "validated": 50,
             "inprogress": 30,
-            "pending": 20
+            "pending": 20,
+            "TotalHours": 10
         }
+    }
     }
 }

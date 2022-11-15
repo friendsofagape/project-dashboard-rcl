@@ -1,5 +1,3 @@
-# Ag Project Managament DashBoard
-
 ```jsx
 import OverViewCard from "./OverViewCard";
 import json from "../../../../AgProjectData.json";

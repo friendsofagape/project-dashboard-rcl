@@ -22,15 +22,15 @@ const OverViewCard = ({
   donutdataKeys.forEach((element, indx) => {
     donutData.push({
       name: element,
-      value: json[currentBook.jsonCode][month][element],
+      value: json[currentBook.jsonCode]["months"][month][element],
       fill: donutColorPallete[indx],
     });
-    totalSum += Number(json[currentBook.jsonCode][month][element]);
+    totalSum += Number(json[currentBook.jsonCode]["months"][month][element]);
   });
 
   let sum = 0;
   donutPercentageKeys.forEach((element) => {
-    sum += Number(json[currentBook.jsonCode][month][element]);
+    sum += Number(json[currentBook.jsonCode]["months"][month][element]);
   });
 
   const percentage = Math.round((sum / totalSum) * 100 * 10) / 10;
