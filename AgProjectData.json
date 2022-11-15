@@ -1,8 +1,64 @@
 {
     "tit" : {
-        "total" : 100,
-        "validated": 50,
-        "inprogress": 30,
-        "pending": 20
+        "jan": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "feb": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "mar": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "apr": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "may": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "Jun": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "Jul": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "aug": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "sep": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "oct": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "nov": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        },
+        "dec": {
+            "validated": 50,
+            "inprogress": 30,
+            "pending": 20
+        }
     }
 }

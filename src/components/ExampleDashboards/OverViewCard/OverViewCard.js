@@ -3,6 +3,7 @@ import PropTypes, { element } from "prop-types";
 import HeadBar from "../../components/HeadBar";
 import Label from "../../components/Label";
 import SemiDonutChart from "../../components/SemiDonutChart";
+import useDateData from "../../hooks/useDateData";
 
 const OverViewCard = ({
   json,
@@ -13,22 +14,23 @@ const OverViewCard = ({
   donutdataKeys,
   donutPercentageKeys,
 }) => {
-  console.log(json[currentBook.jsonCode]["inprogress"]);
+  // current month
+  const [day, month, year] = useDateData();
   // generate data for donut chart from json
   const donutData = [];
   let totalSum = 0;
   donutdataKeys.forEach((element, indx) => {
     donutData.push({
       name: element,
-      value: json[currentBook.jsonCode][element],
+      value: json[currentBook.jsonCode][month][element],
       fill: donutColorPallete[indx],
     });
-    totalSum += Number(json[currentBook.jsonCode][element]);
+    totalSum += Number(json[currentBook.jsonCode][month][element]);
   });
 
   let sum = 0;
   donutPercentageKeys.forEach((element) => {
-    sum += Number(json[currentBook.jsonCode][element]);
+    sum += Number(json[currentBook.jsonCode][month][element]);
   });
 
   const percentage = Math.round((sum / totalSum) * 100 * 10) / 10;
