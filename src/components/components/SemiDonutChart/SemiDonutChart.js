@@ -2,7 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 import { PieChart, Pie, ResponsiveContainer, Tooltip, Label } from "recharts";
 
-const SemiDonutChart = ({ data, labelEnable, animationEnable, donutText }) => {
+const SemiDonutChart = ({
+  data,
+  labelEnable,
+  animationEnable,
+  donutText,
+  outerRadius,
+  positionX,
+  positionY,
+  textSize,
+}) => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (labelEnable && active && payload && payload.length) {
       return (
@@ -22,18 +31,18 @@ const SemiDonutChart = ({ data, labelEnable, animationEnable, donutText }) => {
             data={data}
             dataKey="value"
             nameKey="name"
-            outerRadius={80}
-            innerRadius={40}
+            outerRadius={outerRadius}
+            innerRadius={outerRadius / 2}
             paddingAngle={0}
-            cx="50%"
-            cy="60%"
+            cx={positionX}
+            cy={positionY}
             startAngle={180}
             endAngle={0}
             isAnimationActive={animationEnable}
           >
             <Label
-              className="text-md font-bold"
-              value={donutText}
+              className={`${textSize} font-bold`}
+              value={`${donutText}%`}
               position="center"
             />
           </Pie>
@@ -59,6 +68,14 @@ SemiDonutChart.propTypes = {
   animationEnable: PropTypes.bool,
   /** text for donut */
   donutText: PropTypes.string,
+  /** outer radius of donut */
+  outerRadius: PropTypes.number,
+  /** x postion of donut ( % )*/
+  positionX: PropTypes.string,
+  /** Y postion of donut ( % )*/
+  positionY: PropTypes.string,
+  /** text size of donut label*/
+  textSize: PropTypes.string,
 };
 
 SemiDonutChart.defaultProps = {
@@ -69,7 +86,11 @@ SemiDonutChart.defaultProps = {
   ],
   labelEnable: true,
   animationEnable: true,
+  outerRadius: 80,
   donutText: "",
+  positionX: "50%",
+  positionY: "50%",
+  textSize: "text-lg",
 };
 
 export default SemiDonutChart;
