@@ -1,9 +1,20 @@
 {
     "tit" : {
+        "versificationData":[],
         "jan": {
-            "validated": 50,
-            "inprogress": 30,
-            "pending": 20
+            "validated": 20,
+            "inprogress": 20,
+            "pending": 20,
+
+            "TotalHours": 80,
+            "rate of transaltion":"calculate from total hourse spend , finished work verse/hour per month",
+            "estimated date ":"calculate from rate of transltion of last 3 months",
+            "spellchek":"data from Ag spell checker",
+            "USFM Error":"Data from Ag",
+            "White Spacing":"Data from Ag",
+            "remaining verses":"calculate from total verse - completed verses by month (versification data)",
+            "remaining chapters":"?"
+
         },
         "feb": {
             "validated": 50,
@@ -11,9 +22,9 @@
             "pending": 20
         },
         "mar": {
-            "validated": 50,
-            "inprogress": 30,
-            "pending": 20
+            "validated": 40,
+            "inprogress": 40,
+            "pending": 10
         },
         "apr": {
             "validated": 50,

@@ -1,11 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const CardLayout = ({ children, bgColor, borderRadius, width, height }) => {
+const CardLayout = ({
+  children,
+  bgColor,
+  borderRadius,
+  width,
+  height,
+  extraClass,
+}) => {
   return (
     <>
       <div
-        className={` w-[${width}] h-[${height}] rounded-[${borderRadius}] bg-[${bgColor}] flex p-3 justify-center items-center `}
+        className={` ${width} ${height} rounded-[${borderRadius}] bg-[${bgColor}] ${extraClass} pt-3 `}
       >
         {children}
       </div>
@@ -21,17 +28,20 @@ CardLayout.propTypes = {
   /** border radius in px */
   borderRadius: PropTypes.string,
   /** height in rem */
-  borderRadius: PropTypes.string,
+  height: PropTypes.string,
   /** width in rem */
-  borderRadius: PropTypes.string,
+  width: PropTypes.string,
+  /** extraClass in tailwind */
+  extraClass: PropTypes.string,
 };
 
 CardLayout.defaultProps = {
   children: <>Content</>,
   bgColor: "#eeeeee",
-  borderRadius: "10px",
-  height: "10rem",
-  width: "10rem",
+  borderRadius: "12px",
+  height: "h-[10rem]",
+  width: "w-[10rem]",
+  extraClass: "",
 };
 
 export default CardLayout;

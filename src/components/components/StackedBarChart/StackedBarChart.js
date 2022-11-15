@@ -43,7 +43,7 @@ const StackedBarChart = ({
           {labels.length > 0 &&
             labels.map((label, index) => (
               <Bar
-                isAnimationActive={false}
+                isAnimationActive={startAnimation}
                 barSize={barSize}
                 dataKey={label}
                 stackId="x"
