@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 // import useDateData from "../../hooks/useDateData";
 import CardLayout from "../../components/CardLayout";
 import Label from "../../components/Label";
 import MultiLineChart from "../../components/MultiLineChart";
+import useGetJsonPathdata from "../../hooks/useGetJsonPathdata";
 
 const ProgressRateLineChart = ({
   json,
+  basePath,
   Head,
   subHead,
   currentBook,
@@ -15,17 +17,36 @@ const ProgressRateLineChart = ({
 }) => {
   // // current month
   // const [day, month, year] = useDateData();
+  const [jsonBaseData, currentBookdata] = useGetJsonPathdata(
+    basePath,
+    json,
+    currentBook
+  );
   // generate graph data for chart from json
-  const graphdata = [];
-  Object.entries(json[currentBook.jsonCode]["months"]).forEach(([key, val]) => {
-    const monthobj = { name: key };
-    let sum = 0;
-    graphdataKeys.forEach((graphkey) => {
-      sum += val[graphkey];
+  const [graphdata, setGraphdata] = useState([]);
+
+  useEffect(() => {
+    const graphDataTemp = [];
+    Object.entries(currentBookdata["months"]).forEach(([key, val]) => {
+      const monthobj = { name: key };
+      let sum = 0;
+      graphdataKeys.forEach((graphkey) => {
+        const elementValueSum = val[graphkey]?.reduce(
+          (acc, key) => acc + key,
+          0
+        );
+        sum += elementValueSum;
+        monthobj[graphkey] = elementValueSum;
+      });
+      const totalHours = val["TotalHours"]?.reduce(
+        (acc, hour) => acc + hour,
+        0
+      );
+      monthobj["rate"] = sum === 0 ? 0 : sum / totalHours;
+      graphDataTemp.push(monthobj);
     });
-    monthobj["rate"] = sum === 0 ? 0 : sum / val["TotalHours"];
-    graphdata.push(monthobj);
-  });
+    setGraphdata(graphDataTemp);
+  }, [currentBookdata, graphdataKeys]);
 
   return (
     <>
@@ -65,7 +86,9 @@ const ProgressRateLineChart = ({
 
 ProgressRateLineChart.propTypes = {
   /** Json file */
-  json: PropTypes.string.isRequired,
+  json: PropTypes.object.isRequired,
+  /** Json base path after Projects  - currentBook eg :("projectName/Books") */
+  basePath: PropTypes.string.isRequired,
   /** Heading */
   Head: PropTypes.string.isRequired,
   /** Sub Head */

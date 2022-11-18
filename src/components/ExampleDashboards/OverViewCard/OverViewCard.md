@@ -8,9 +8,11 @@ import json from "../../../../AgProjectData.json";
     Head2={"by the month"}
     currentBook={{ name: "Titus", jsonCode: "tit" }}
     json={json}
+    basePath="projectName1/books"
     donutdataKeys={["validated", "inprogress", "pending"]}
-    donutPercentageKeys={["validated", "inprogress"]}
+    donutPercentageKeys={["validated"]}
     donutColorPallete={["#0073e5", "#80bfff", "#cce6ff"]}
+    IconOnclick={() => alert("Pop Up for Book Selection")}
   />
 </div>;
 ```

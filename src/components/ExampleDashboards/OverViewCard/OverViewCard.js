@@ -1,46 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import HeadBar from "../../components/HeadBar";
 import Label from "../../components/Label";
 import SemiDonutChart from "../../components/SemiDonutChart";
 import useDateData from "../../hooks/useDateData";
+import useGetJsonPathdata from "../../hooks/useGetJsonPathdata";
 
 const OverViewCard = ({
   json,
+  basePath,
   Head1,
   Head2,
   donutColorPallete,
   currentBook,
   donutdataKeys,
   donutPercentageKeys,
+  IconOnclick,
 }) => {
+  const [totalSum, setTotalSum] = useState(0);
+  const [donutData, setDonutData] = useState([]);
+  const [percentage, setPercentage] = useState([]);
+
   // current month
   const [day, month, year] = useDateData();
-  // generate data for donut chart from json
-  const donutData = [];
-  let totalSum = 0;
-  donutdataKeys.forEach((element, indx) => {
-    donutData.push({
-      name: element,
-      value: json[currentBook.jsonCode]["months"][month][element],
-      fill: donutColorPallete[indx],
+  const [jsonBaseData, currentBookdata] = useGetJsonPathdata(
+    basePath,
+    json,
+    currentBook
+  );
+
+  useEffect(() => {
+    const donutTempData = [];
+    // generate graphData
+    let verseSum = 0;
+    let perSum = 0;
+    donutdataKeys.forEach((element, indx) => {
+      const elementValueSum = currentBookdata["months"][month][element]?.reduce(
+        (acc, ver) => acc + ver,
+        0
+      );
+      verseSum += elementValueSum;
+      if (donutPercentageKeys.includes(element)) {
+        perSum += elementValueSum;
+      }
+      donutTempData.push({
+        name: element,
+        value: elementValueSum,
+        fill: donutColorPallete[indx],
+      });
     });
-    totalSum += Number(json[currentBook.jsonCode]["months"][month][element]);
-  });
-
-  let sum = 0;
-  donutPercentageKeys.forEach((element) => {
-    sum += Number(json[currentBook.jsonCode]["months"][month][element]);
-  });
-
-  const percentage = Math.round((sum / totalSum) * 100 * 10) / 10;
+    setTotalSum(verseSum);
+    setDonutData(donutTempData);
+    // calc percentage
+    const percent = Math.round((perSum / verseSum) * 100 * 10) / 10;
+    setPercentage(percent);
+  }, [
+    donutColorPallete,
+    donutdataKeys,
+    donutPercentageKeys,
+    month,
+    currentBookdata,
+  ]);
 
   return (
     <>
       <div className="max-w-[50%] ">
         <HeadBar
           button={true}
-          IconOnclick={() => alert("Pop Up for Book Selection")}
+          IconOnclick={IconOnclick}
           bgColor={"bg-[#0073e5]"}
           IconBg={"bg-[#1981e8]"}
           LabelStyle={{ children: currentBook?.name, color: "text-white" }}
@@ -77,7 +104,11 @@ const OverViewCard = ({
 
 OverViewCard.propTypes = {
   /** Json file */
-  json: PropTypes.string.isRequired,
+  json: PropTypes.object.isRequired,
+  /** Json base path after Projects  - currentBook eg :("projectName/Books") */
+  basePath: PropTypes.string.isRequired,
+  /** Button onClick Fucntion*/
+  IconOnclick: PropTypes.func,
   /** Colors for donut sections*/
   donutColorPallete: PropTypes.arrayOf(PropTypes.string),
   /** data keys in json for donut sections*/

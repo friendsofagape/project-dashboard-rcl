@@ -39,6 +39,8 @@ let sections = [
         "OverViewCard",
         "VerificationBarCard",
         "ProgressRateLineChart",
+        "RemainingStatusCard",
+        "ErrorStatusCard",
       ];
       return componentNames.map((componentName) => {
         return path.resolve(

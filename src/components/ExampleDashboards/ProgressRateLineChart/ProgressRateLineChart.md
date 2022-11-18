@@ -10,6 +10,7 @@ import json from "../../../../AgProjectData.json";
     subHead={"by the month - verses/hour"}
     currentBook={{ name: "Titus", jsonCode: "tit" }}
     json={json}
+    basePath="projectName1/books"
     graphdataKeys={["validated"]}
     graphColors={["#0073e5"]}
   />

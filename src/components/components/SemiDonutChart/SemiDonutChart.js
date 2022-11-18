@@ -67,7 +67,7 @@ SemiDonutChart.propTypes = {
   /** enable/disable animation*/
   animationEnable: PropTypes.bool,
   /** text for donut */
-  donutText: PropTypes.string,
+  donutText: PropTypes.number,
   /** outer radius of donut */
   outerRadius: PropTypes.number,
   /** x postion of donut ( % )*/

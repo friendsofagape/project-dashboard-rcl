@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 // import useDateData from "../../hooks/useDateData";
 import CardLayout from "../../components/CardLayout";
 import Label from "../../components/Label";
 import StackedBarChart from "../../components/StackedBarChart";
+import useGetJsonPathdata from "../../hooks/useGetJsonPathdata";
 
 const VerificationBarCard = ({
   json,
+  basePath,
   Head,
   subHead,
   currentBook,
@@ -15,16 +17,30 @@ const VerificationBarCard = ({
 }) => {
   // // current month
   // const [day, month, year] = useDateData();
-  // generate graph data for chart from json
-  const graphdata = [];
+  const [jsonBaseData, currentBookdata] = useGetJsonPathdata(
+    basePath,
+    json,
+    currentBook
+  );
 
-  Object.entries(json[currentBook.jsonCode]["months"]).forEach(([key, val]) => {
-    const monthobj = { name: key };
-    graphdataKeys.forEach((graphkey) => {
-      monthobj[graphkey] = val[graphkey];
+  const [graphdata, setGraphdata] = useState([]);
+
+  // generate graph data for chart from json
+  useEffect(() => {
+    const graphDataTemp = [];
+    Object.entries(currentBookdata["months"]).forEach(([key, val]) => {
+      const monthobj = { name: key };
+      graphdataKeys.forEach((graphkey) => {
+        const elementValueSum = val[graphkey]?.reduce(
+          (acc, key) => acc + key,
+          0
+        );
+        monthobj[graphkey] = elementValueSum;
+      });
+      graphDataTemp.push(monthobj);
     });
-    graphdata.push(monthobj);
-  });
+    setGraphdata(graphDataTemp);
+  }, [currentBookdata, graphdataKeys]);
 
   return (
     <>
@@ -60,7 +76,9 @@ const VerificationBarCard = ({
 
 VerificationBarCard.propTypes = {
   /** Json file */
-  json: PropTypes.string.isRequired,
+  json: PropTypes.object.isRequired,
+  /** Json base path after Projects  - currentBook eg :("projectName/Books") */
+  basePath: PropTypes.string.isRequired,
   /** Heading */
   Head: PropTypes.string.isRequired,
   /** Sub Head */
