@@ -4,7 +4,7 @@ ErrorStatusCard
 import ErrorStatusCard from "./ErrorStatusCard";
 import json from "../../../../AgProjectData.json";
 
-<div class="grid grid-cols-4 gap-5">
+<div className="grid grid-cols-4 gap-5">
   <div className="bg-[#f9f9f9] w-auto h-auto">
     <ErrorStatusCard
       Head={"Spell Check"}

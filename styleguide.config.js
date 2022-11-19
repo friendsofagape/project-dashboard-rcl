@@ -21,6 +21,7 @@ let sections = [
         "PieProgress",
         "SemiDonutChart",
         "StackedBarChart",
+        "Table",
       ];
       return componentNames.map((componentName) => {
         return path.resolve(

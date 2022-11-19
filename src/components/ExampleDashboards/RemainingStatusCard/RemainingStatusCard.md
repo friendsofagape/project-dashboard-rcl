@@ -4,7 +4,7 @@ RemainingStatusCard chart
 import RemainingStatusCard from "./RemainingStatusCard";
 import json from "../../../../AgProjectData.json";
 
-<div class="grid grid-cols-2 gap-1">
+<div className="grid grid-cols-2 gap-1">
   <div className="bg-[#f9f9f9] w-52 h-auto">
     <RemainingStatusCard
       type="verse"
