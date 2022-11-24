@@ -2,6 +2,9 @@
 
 Badge component
 
+- Pre defined Badges
+- custom Badge
+
 ```jsx
 import Badge from "./Badge";
 
@@ -42,17 +45,14 @@ import Badge from "./Badge";
       <Badge BadgeType="pass">PASS</Badge>
       <span>Pass</span>
     </div>
-
     <div className="flex flex-col text-xs text-center gap-1 ">
       <Badge BadgeType="recheck">RECHECK</Badge>
       <span>Re Check</span>
     </div>
-
     <div className="flex flex-col text-xs text-center gap-1 ">
       <Badge BadgeType="fail">FAIL</Badge>
       <span>Fail</span>
     </div>
-
     <div className="flex flex-col text-xs text-center gap-1 ">
       <Badge BadgeType="notstarted">NOT STARTED</Badge>
       <span>Not Started</span>

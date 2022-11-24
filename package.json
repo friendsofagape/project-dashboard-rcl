@@ -1,23 +1,23 @@
 {
   "name": "project-dashboard-rcl",
   "version": "0.1.0",
-  "description": "Project dashborad component library",
+  "description": "Project dashboard component library",
   "email": "autographa.support@bridgeconn.com",
   "author": "Friends of Agape <autographa.support@bridgeconn.com>",
   "private": true,
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/friendsofagape/project-dashboard-rcl"
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "buildnext": "next build",
     "startnext": "next start",
     "lint": "next lint",
     "start": "styleguidist server",
-    "styleguidist:build": "styleguidist build",
+    "build": "styleguidist build",
     "build:tailwind": "npx tailwindcss -i styles/tailwind.css -o dist/styles.css --watch"
   },
   "dependencies": {

@@ -26,8 +26,8 @@ const ErrorStatusCard = ({ json, basePath, Head, currentBook, dataKey }) => {
     <>
       <CardLayout
         bgColor="#ffffff"
-        width="w-auto"
-        height="h-auto"
+        width="auto"
+        height="auto"
         borderRadius="6px"
         extraClass="border-gray-200 border-2 pb-5 "
       >

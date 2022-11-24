@@ -12,7 +12,7 @@ const CardLayout = ({
   return (
     <>
       <div
-        className={` ${width} ${height} rounded-[${borderRadius}] bg-[${bgColor}] ${extraClass} pt-3 `}
+        className={`w-[${width}] h-[${height}] rounded-[${borderRadius}] bg-[${bgColor}] ${extraClass} p-3 `}
       >
         {children}
       </div>
@@ -39,8 +39,8 @@ CardLayout.defaultProps = {
   children: <>Content</>,
   bgColor: "#eeeeee",
   borderRadius: "12px",
-  height: "h-[10rem]",
-  width: "w-[10rem]",
+  height: "10rem",
+  width: "10rem",
   extraClass: "",
 };
 

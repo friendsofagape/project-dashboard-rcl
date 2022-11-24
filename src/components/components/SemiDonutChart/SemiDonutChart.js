@@ -15,7 +15,7 @@ const SemiDonutChart = ({
   const CustomTooltip = ({ active, payload, label }) => {
     if (labelEnable && active && payload && payload.length) {
       return (
-        <div className={`bg-[${payload[0]?.payload?.fill}] p-1 rounded-md`}>
+        <div className={`bg-[${payload[0]?.payload?.fill}] p-1 rounded-md `}>
           <p className="text-xs ">{`${payload[0]?.name} : ${payload[0]?.value}`}</p>
         </div>
       );
@@ -46,7 +46,7 @@ const SemiDonutChart = ({
               position="center"
             />
           </Pie>
-          <Tooltip content={<CustomTooltip />} />
+          <Tooltip content={<CustomTooltip payload={data} />} />
         </PieChart>
       </ResponsiveContainer>
     </>
@@ -80,14 +80,14 @@ SemiDonutChart.propTypes = {
 
 SemiDonutChart.defaultProps = {
   data: [
-    { name: "Validated", value: 50, fill: "#0073e5" },
-    { name: "Inprogress", value: 20, fill: "#80bfff" },
-    { name: "Pending", value: 16, fill: "#cce6ff" },
+    { name: "Validated", value: 60, fill: "#0073e5" },
+    { name: "Inprogress", value: 30, fill: "#80bfff" },
+    { name: "Pending", value: 10, fill: "#cce6ff" },
   ],
   labelEnable: true,
   animationEnable: true,
   outerRadius: 80,
-  donutText: "",
+  donutText: "60",
   positionX: "50%",
   positionY: "50%",
   textSize: "text-lg",

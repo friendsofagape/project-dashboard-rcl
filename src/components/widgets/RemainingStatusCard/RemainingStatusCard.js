@@ -39,8 +39,8 @@ const RemainingStatusCard = ({
     <>
       <CardLayout
         bgColor="#ffffff"
-        width="w-auto"
-        height="h-auto"
+        width="auto"
+        height="auto"
         borderRadius="6px"
         extraClass="border-gray-200 border-2 p-5"
       >

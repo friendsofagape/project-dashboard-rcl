@@ -3,11 +3,6 @@ const rhythm = (value = 1, unit = "rem", basis = 1.5) =>
     ? value.map((v) => `${basis * v}${unit}`).join(" ")
     : `${basis * value}${unit}`;
 
-// light: '#59B7E7',
-// main: '#31ADE3',
-// dark: '#014263',
-// contrastText: '#FFF'
-
 const colors = {
   light: "#fff",
   dark: "#000",

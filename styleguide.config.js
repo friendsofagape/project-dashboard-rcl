@@ -34,8 +34,8 @@ let sections = [
     },
   },
   {
-    name: "DashBoards Examples",
-    content: "src/components/ExampleDashboards/_readme.md",
+    name: "DashBoards Widgets",
+    content: "src/components/widgets/_readme.md",
     components: () => {
       const componentNames = [
         "OverViewCard",
@@ -47,7 +47,7 @@ let sections = [
       return componentNames.map((componentName) => {
         return path.resolve(
           __dirname,
-          `src/components/ExampleDashboards/${componentName}`,
+          `src/components/widgets/${componentName}`,
           `${componentName}.js`
         );
       });
@@ -57,7 +57,7 @@ let sections = [
 
 module.exports = {
   components: "src/components/**/[A-Z]*.{js,jsx,tsx}",
-  title: `${name} v${version}`,
+  title: `ProjectDashboardRcl v${version}`,
   ribbon: {
     url: repository.url,
     text: "View on GitHub",

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 // import useDateData from "../../hooks/useDateData";
 import CardLayout from "../../components/CardLayout";
 import Label from "../../components/Label";
-import StackedBarChart from "../../components/StackedBarChart";
+import MultiLineChart from "../../components/MultiLineChart";
 import useGetJsonPathdata from "../../hooks/useGetJsonPathdata";
 
-const VerificationBarCard = ({
+const ProgressRateLineChart = ({
   json,
   basePath,
   Head,
@@ -22,21 +22,27 @@ const VerificationBarCard = ({
     json,
     currentBook
   );
-
+  // generate graph data for chart from json
   const [graphdata, setGraphdata] = useState([]);
 
-  // generate graph data for chart from json
   useEffect(() => {
     const graphDataTemp = [];
     Object.entries(currentBookdata["months"]).forEach(([key, val]) => {
       const monthobj = { name: key };
+      let sum = 0;
       graphdataKeys.forEach((graphkey) => {
         const elementValueSum = val[graphkey]?.reduce(
           (acc, key) => acc + key,
           0
         );
+        sum += elementValueSum;
         monthobj[graphkey] = elementValueSum;
       });
+      const totalHours = val["TotalHours"]?.reduce(
+        (acc, hour) => acc + hour,
+        0
+      );
+      monthobj["rate"] = sum === 0 ? 0 : sum / totalHours;
       graphDataTemp.push(monthobj);
     });
     setGraphdata(graphDataTemp);
@@ -46,8 +52,8 @@ const VerificationBarCard = ({
     <>
       <CardLayout
         bgColor="#ffffff"
-        width="w-auto"
-        height="h-auto"
+        width="auto"
+        height="auto"
         borderRadius="6px"
         extraClass="border-gray-200 border-2 "
       >
@@ -61,12 +67,16 @@ const VerificationBarCard = ({
         </div>
         <CardLayout
           bgColor="transparent"
-          width="w-auto"
-          height="h-[15rem]"
+          width="auto"
+          height="15rem"
           extraClass="my-2 mr-2"
         >
-          <StackedBarChart
-            data={{ graphData: graphdata, colors: graphColors }}
+          <MultiLineChart
+            data={{
+              graphData: graphdata,
+              colors: graphColors,
+              dataKeyNames: ["rate"],
+            }}
           />
         </CardLayout>
       </CardLayout>
@@ -74,7 +84,7 @@ const VerificationBarCard = ({
   );
 };
 
-VerificationBarCard.propTypes = {
+ProgressRateLineChart.propTypes = {
   /** Json file */
   json: PropTypes.object.isRequired,
   /** Json base path after Projects  - currentBook eg :("projectName/Books") */
@@ -94,6 +104,6 @@ VerificationBarCard.propTypes = {
   }),
 };
 
-VerificationBarCard.defaultProps = {};
+ProgressRateLineChart.defaultProps = {};
 
-export default VerificationBarCard;
+export default ProgressRateLineChart;

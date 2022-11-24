@@ -17,7 +17,7 @@ import SemiDonutChart from "./SemiDonutChart";
         { name: "C", value: 20, fill: "#fffa00" },
         { name: "D", value: 15, fill: "#ffcf00" },
       ]}
-      donutText="65%"
+      donutText="65"
     />
   </div>
 </div>;
