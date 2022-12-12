@@ -1,0 +1,92 @@
+{
+    "version" :"0.1.0",
+    "projects":{
+        "projectName1":{
+            "books":{
+                "tit" : {
+                    "totalVerses":[16,15,15],
+                    "spellingErrors":[5,6,4],
+                    "usfmTagErrors":[2,4,4],
+                    "suspiciousWhitespaces":[2,3,5],
+                    "emptyVerses":[2,3,4],
+                    "months":{
+                        "jan": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "feb": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "mar": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "apr": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "may": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "jun": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "jul": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "aug": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "sep": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "oct": {
+                            "validated": [8,5,0],
+                            "inprogress": [6,2,0],
+                            "pending": [2,8,15],
+                            "TotalHours": [3,4,0]
+                        },
+                        "nov": {
+                            "validated": [4,2,5],
+                            "inprogress": [2,0,2],
+                            "pending": [2,8,8],
+                            "TotalHours": [4,4,5]
+                        },
+                        "dec": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+    
