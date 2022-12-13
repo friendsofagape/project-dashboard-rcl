@@ -65,22 +65,22 @@
                             "TotalHours": [0,0,0]
                         },
                         "oct": {
+                            "validated": [0,0,0],
+                            "inprogress": [0,0,0],
+                            "pending": [0,0,0],
+                            "TotalHours": [0,0,0]
+                        },
+                        "nov": {
                             "validated": [8,5,0],
                             "inprogress": [6,2,0],
                             "pending": [2,8,15],
                             "TotalHours": [3,4,0]
                         },
-                        "nov": {
+                        "dec": {
                             "validated": [4,2,5],
                             "inprogress": [2,0,2],
                             "pending": [2,8,8],
                             "TotalHours": [4,4,5]
-                        },
-                        "dec": {
-                            "validated": [0,0,0],
-                            "inprogress": [0,0,0],
-                            "pending": [0,0,0],
-                            "TotalHours": [0,0,0]
                         }
                     }
                 }

@@ -4,7 +4,7 @@ import CardLayout from "../../components/CardLayout";
 import Label from "../../components/Label";
 import Badge from "../../components/Badge";
 import PieProgress from "../../components/PieProgress";
-import useGetRemainBCV from "../../hooks/usegetRemainBCV";
+import useGetRemainBCV from "../../hooks/useGetRemainBCV";
 import useDateData from "../../hooks/useDateData";
 import useGetJsonPathdata from "../../hooks/useGetJsonPathdata";
 
